@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 740c6d3ff6129ce478837aa0608f65c6
+timeCreated: 1484924698
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera01
+    100002: Camera01.Target
+    100004: //RootNode
+    100006: Layer:CENTRO
+    100008: Layer:CILINDRO
+    100010: Layer:GABINE
+    100012: Layer:GABINE 1
+    100014: Layer:HASTE
+    100016: Layer:HASTE_INTERNA1
+    100018: Layer:HASTE_INTERNA2
+    100020: Layer:HASTE_INTERNA3
+    100022: Layer:MOTOR
+    100024: Layer:PARALAMAS
+    100026: Layer:PARALAMAS 1
+    100028: Layer:PATOLAS
+    100030: Layer:PATOLAS 1
+    100032: Layer:PNEUS
+    100034: VRayPlane01
+    400000: Camera01
+    400002: Camera01.Target
+    400004: //RootNode
+    400006: Layer:CENTRO
+    400008: Layer:CILINDRO
+    400010: Layer:GABINE
+    400012: Layer:GABINE 1
+    400014: Layer:HASTE
+    400016: Layer:HASTE_INTERNA1
+    400018: Layer:HASTE_INTERNA2
+    400020: Layer:HASTE_INTERNA3
+    400022: Layer:MOTOR
+    400024: Layer:PARALAMAS
+    400026: Layer:PARALAMAS 1
+    400028: Layer:PATOLAS
+    400030: Layer:PATOLAS 1
+    400032: Layer:PNEUS
+    400034: VRayPlane01
+    2300000: Layer:CENTRO
+    2300002: Layer:CILINDRO
+    2300004: Layer:GABINE 1
+    2300006: Layer:HASTE
+    2300008: Layer:HASTE_INTERNA1
+    2300010: Layer:HASTE_INTERNA2
+    2300012: Layer:HASTE_INTERNA3
+    2300014: Layer:MOTOR
+    2300016: Layer:PARALAMAS 1
+    2300018: Layer:PATOLAS
+    2300020: Layer:PNEUS
+    3300000: Layer:CENTRO
+    3300002: Layer:CILINDRO
+    3300004: Layer:GABINE 1
+    3300006: Layer:HASTE
+    3300008: Layer:HASTE_INTERNA1
+    3300010: Layer:HASTE_INTERNA2
+    3300012: Layer:HASTE_INTERNA3
+    3300014: Layer:MOTOR
+    3300016: Layer:PARALAMAS 1
+    3300018: Layer:PATOLAS
+    3300020: Layer:PNEUS
+    4300000: Layer:PNEUS
+    4300002: Layer:PARALAMAS
+    4300004: Layer:GABINE
+    4300006: Layer:CENTRO
+    4300008: Layer:PATOLAS
+    4300010: Layer:HASTE
+    4300012: Layer:HASTE_INTERNA1
+    4300014: Layer:CILINDRO
+    4300016: Layer:MOTOR
+    4300018: Layer:HASTE_INTERNA2
+    4300020: Layer:HASTE_INTERNA3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
