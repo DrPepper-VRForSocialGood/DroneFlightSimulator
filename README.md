@@ -1,2 +1,3 @@
-# Drone_Simulator_Demo
+# Drone_Flight_Simulator
 Hello everyone, this demo is intended for you to get started on the project. There are many parts to it ranging from the actual drone flight, animations, models, and the AI of the humans. The drone flight was based on a series of tutorials by Mario Haberle --> https://www.youtube.com/watch?v=3R_V4gqTs_I I would highly recommend for you to go through those to understand the code of drone. I created a few animations for the propelers of the drone and an waypoint AI for the humans. Additionally, there is colliders everywhere to measure the distance from objects. The original objective of this project was not a flight simulator, but a safety simulator to measure distance from object, so you might disregard this feature or reqork it in a way that might help you. If you have question you can contact me at reiris@ufl.edu or just stop by my office at Rinker Hall Room 208.
+
