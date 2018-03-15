@@ -13,8 +13,8 @@ public class hsScript : MonoBehaviour {
 
 
 	void Update () {
-
-		double absValue = Mathf.Abs ((float)drone.velocity.x);
-		hsText.text = "HS: " + absValue.ToString("F1") + " mph";
+		double jjj;
+		jjj=Mathf.Sqrt(Mathf.Pow(drone.velocity.x,2)+Mathf.Pow(drone.velocity.z,2));
+		hsText.text = "HS: " + jjj.ToString("F1") + " mph";
 	}
 }
