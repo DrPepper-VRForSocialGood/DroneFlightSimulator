@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 9fbc5ad80ce0228429684ec54884cb50
+timeCreated: 1483626503
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: HL_Motor
+    100002: HR_Motor
+    100004: LED
+    100006: LED_2
+    100008: LED_3
+    100010: LED_4
+    100012: Lens
+    100014: MiniCamLens
+    100016: ProHR
+    100018: PropHL
+    100020: PropVL
+    100022: PropVR
+    100024: QuadcopterBody
+    100026: //RootNode
+    100028: VL_Motor
+    100030: VR_Motor
+    400000: HL_Motor
+    400002: HR_Motor
+    400004: LED
+    400006: LED_2
+    400008: LED_3
+    400010: LED_4
+    400012: Lens
+    400014: MiniCamLens
+    400016: ProHR
+    400018: PropHL
+    400020: PropVL
+    400022: PropVR
+    400024: QuadcopterBody
+    400026: //RootNode
+    400028: VL_Motor
+    400030: VR_Motor
+    2300000: HL_Motor
+    2300002: HR_Motor
+    2300004: LED
+    2300006: LED_2
+    2300008: LED_3
+    2300010: LED_4
+    2300012: Lens
+    2300014: MiniCamLens
+    2300016: ProHR
+    2300018: PropHL
+    2300020: PropVL
+    2300022: PropVR
+    2300024: QuadcopterBody
+    2300026: VL_Motor
+    2300028: VR_Motor
+    3300000: HL_Motor
+    3300002: HR_Motor
+    3300004: LED
+    3300006: LED_2
+    3300008: LED_3
+    3300010: LED_4
+    3300012: Lens
+    3300014: MiniCamLens
+    3300016: ProHR
+    3300018: PropHL
+    3300020: PropVL
+    3300022: PropVR
+    3300024: QuadcopterBody
+    3300026: VL_Motor
+    3300028: VR_Motor
+    4300000: QuadcopterBody
+    4300002: PropVL
+    4300004: ProHR
+    4300006: PropVR
+    4300008: PropHL
+    4300010: Lens
+    4300012: MiniCamLens
+    4300014: VL_Motor
+    4300016: VR_Motor
+    4300018: HR_Motor
+    4300020: HL_Motor
+    4300022: LED
+    4300024: LED_2
+    4300026: LED_3
+    4300028: LED_4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
