@@ -49,7 +49,7 @@ public class DroneMovementScript : MonoBehaviour {
 			upForce = 26;
 		}
 		// Set keyboard inputs for drone to lift-off and go down
-		if (Mathf.Abs (Input.GetAxis ("Vertical_Right")) > 0.2f){
+		if (Input.GetAxis ("Vertical_Right") > 0.2f){
 			upForce = 30;
 				if(Input.GetAxis("Horizontal_Left") > 0.2f){
 					upForce = 30;	
