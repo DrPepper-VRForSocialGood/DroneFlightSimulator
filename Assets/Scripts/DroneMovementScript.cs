@@ -35,6 +35,7 @@ public class DroneMovementScript : MonoBehaviour {
 			if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && !Input.GetKey (KeyCode.J) && !Input.GetKey (KeyCode.L)) {
 				ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
 				upForce = 16;
+                //oye pabo
 			}
 			if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && (Input.GetKey (KeyCode.J) || Input.GetKey (KeyCode.L))) {
 				ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
@@ -59,8 +60,9 @@ public class DroneMovementScript : MonoBehaviour {
 			upForce = -26;
 		} 
 		else if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)){
-			upForce = 9.81f;
-		}
+			upForce = 12.55f;
+            //upForce = 9.81f;
+        }
 
 	}
 
