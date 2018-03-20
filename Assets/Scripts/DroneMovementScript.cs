@@ -4,18 +4,21 @@ using System.Collections;
 public class DroneMovementScript : MonoBehaviour {
 
 	Rigidbody ourDrone;
+    Transform drone;
 
 	void Awake(){
 		ourDrone = GetComponent<Rigidbody> ();
-	}
+        drone = GetComponent<Transform>();
+        drone.position = Vector3.zero;
 
-	void FixedUpdate(){
+    }
+
+    void FixedUpdate(){
 		MovementUpDown();
 		MovementForward();
 		Rotation();
 		ClampingSpeedValues();
 		Swirl ();
-
 		ourDrone.AddRelativeForce (Vector3.up * upForce);
 		ourDrone.rotation = Quaternion.Euler(
 			new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways)
