@@ -5,7 +5,6 @@ using UnityEngine;
 public class switchCams : MonoBehaviour
 {
     public GameObject DroneCam, PilotCam;
-    public KeyCode TKey;
     public bool camSwitch = false;
     public Canvas UI;
 
@@ -16,24 +15,28 @@ public class switchCams : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (!camSwitch)
-            {                                 
-                camSwitch = true;
+            camSwitch = !camSwitch;
+            if (camSwitch == true)
+            {
                 PilotCam.SetActive(false);
                 DroneCam.SetActive(true);
                 UI.enabled = true;
-            
+                
+                Debug.Log("Drone Cam");
             }
-            else if (camSwitch)
-            {
-                PilotCam.SetActive(true);
-                DroneCam.SetActive(false);
-                camSwitch = false;
-                UI.enabled = false;
-            }
+            Debug.Log("middle");
 
+            if (camSwitch == false)
+            {
+                DroneCam.SetActive(false);
+                PilotCam.SetActive(true);
+                UI.enabled = false;
+                
+                Debug.Log("Pilot Cam");
+
+            }
         }
     }
 }

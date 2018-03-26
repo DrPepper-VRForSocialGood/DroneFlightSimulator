@@ -211,7 +211,7 @@ public class Tracking : MonoBehaviour {
 
 		//This text is always added, making the file longer over time if not deleted
 		string appendText = dp + ", " + System.DateTime.Now.ToString()+", " + objectcolor + "\r\n";
-		System.IO.File.AppendAllText("C:/Users/DarkB/Downloads/MyTest.txt", appendText);
+		//System.IO.File.AppendAllText("C:/Users/DarkB/Downloads/MyTest.txt", appendText);
 
 	}
 }
