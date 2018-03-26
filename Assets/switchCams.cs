@@ -24,9 +24,7 @@ public class switchCams : MonoBehaviour
                 DroneCam.SetActive(true);
                 UI.enabled = true;
                 
-                Debug.Log("Drone Cam");
             }
-            Debug.Log("middle");
 
             if (camSwitch == false)
             {
@@ -34,7 +32,6 @@ public class switchCams : MonoBehaviour
                 PilotCam.SetActive(true);
                 UI.enabled = false;
                 
-                Debug.Log("Pilot Cam");
 
             }
         }
