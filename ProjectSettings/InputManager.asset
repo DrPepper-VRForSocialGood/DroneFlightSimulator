@@ -150,7 +150,7 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal
+    m_Name: Horizontal_Left
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -164,9 +164,9 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical
+    m_Name: Vertical_Left
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -294,7 +294,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     m_Name: Oculus_GearVR_LThumbstickX
+=======
+    m_Name: Horizontal_Right
+>>>>>>> origin/Controller_Mapping
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -302,11 +306,16 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
+<<<<<<< HEAD
     dead: 0.001
+=======
+    dead: 0.19
+>>>>>>> origin/Controller_Mapping
     sensitivity: 1
     snap: 0
     invert: 0
     type: 2
+<<<<<<< HEAD
     axis: 0
     joyNum: 0
   - serializedVersion: 3
@@ -375,6 +384,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Oculus_GearVR_DpadY
+=======
+    axis: 3
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Vertical_Right
+>>>>>>> origin/Controller_Mapping
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -382,11 +397,16 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
+<<<<<<< HEAD
     dead: 0.001
+=======
+    dead: 0.19
+>>>>>>> origin/Controller_Mapping
     sensitivity: 1
     snap: 0
     invert: 1
     type: 2
+<<<<<<< HEAD
     axis: 5
     joyNum: 0
   - serializedVersion: 3
@@ -420,4 +440,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 11
+=======
+    axis: 4
+>>>>>>> origin/Controller_Mapping
     joyNum: 0

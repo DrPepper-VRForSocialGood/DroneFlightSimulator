@@ -31,37 +31,37 @@ public class DroneMovementScript : MonoBehaviour {
 		
 		Speed = ourDrone.velocity.magnitude;
 
-		if ((Mathf.Abs (Input.GetAxis ("Vertical")) > 0.2f || Mathf.Abs (Input.GetAxis ("Horizontal")) > 0.2f)) {
-			if (Input.GetKey (KeyCode.I) || Input.GetKey (KeyCode.K)) {
+		if ((Mathf.Abs (Input.GetAxis ("Vertical_Left")) > 0.2f || Mathf.Abs (Input.GetAxis ("Horizontal_Left")) > 0.2f)) {
+			if (Mathf.Abs(Input.GetAxis ("Vertical_Right")) > 0.2f) {
 				ourDrone.velocity = ourDrone.velocity;
 			}
-			if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && !Input.GetKey (KeyCode.J) && !Input.GetKey (KeyCode.L)) {
+			if (Mathf.Abs (Input.GetAxis ("Vertical_Right")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Right")) < 0.2f) {
 				ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
 				upForce = 16;
 			}
-			if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && (Input.GetKey (KeyCode.J) || Input.GetKey (KeyCode.L))) {
+			if (Mathf.Abs (Input.GetAxis ("Vertical_Right")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Right")) > 0.2f) {
 				ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
 				upForce = 16;
 			}
-			if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L)){
+			if(Mathf.Abs (Input.GetAxis ("Horizontal_Right")) > 0.2f){
 				upForce = 16;
 			}
 		}
 
-		if(Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f){
+		if(Mathf.Abs (Input.GetAxis("Vertical_Left")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Left")) > 0.2f){
 			upForce = 26;
 		}
 		// Set keyboard inputs for drone to lift-off and go down
-		if (Input.GetKey (KeyCode.I)){
+		if (Input.GetAxis ("Vertical_Right") > 0.2f){
 			upForce = 30;
-				if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f){
+				if(Input.GetAxis("Horizontal_Left") > 0.2f){
 					upForce = 30;	
 				}
 		} 
-		else if (Input.GetKey (KeyCode.K)){
+		else if (Input.GetAxis ("Vertical_Right") < -0.2f){
 			upForce = -26;
 		} 
-		else if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)){
+		else if (Mathf.Abs (Input.GetAxis ("Vertical_Right")) < 0.2f && (Mathf.Abs(Input.GetAxis("Vertical_Left")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal_Left")) < 0.2f)){
 			upForce = 9.81f;
 		}
 
@@ -72,10 +72,12 @@ public class DroneMovementScript : MonoBehaviour {
 	private float titlAmountForward = 0;
 	private float titlVelocityForward; //unnecesary
 	void MovementForward(){
-		if (Input.GetAxis ("Vertical") != 0) {
-			ourDrone.AddRelativeForce (Vector3.forward * Input.GetAxis ("Vertical") * movementForwardSpeed);
-			titlAmountForward = Mathf.SmoothDamp (titlAmountForward, 20 * Input.GetAxis ("Vertical"), ref titlVelocityForward, 0.1f);
-
+		if (Input.GetAxis ("Vertical_Left") != 0) {
+			ourDrone.AddRelativeForce (Vector3.forward * Input.GetAxis ("Vertical_Left") * movementForwardSpeed);
+			titlAmountForward = Mathf.SmoothDamp (titlAmountForward, 20 * Input.GetAxis ("Vertical_Left"), ref titlVelocityForward, 0.1f);
+		}
+		else {
+			titlAmountForward = Mathf.SmoothDamp (titlAmountForward, 0, ref titlVelocityForward, 0.1f);
 		}
 	}
 	private float wantedYRotation;
@@ -83,10 +85,10 @@ public class DroneMovementScript : MonoBehaviour {
 	private float rotateAmountByKeys = 2.5f;
 	private float rotationYVelocity;
 	void Rotation(){
-		if (Input.GetKey (KeyCode.J)) {
+		if (Input.GetAxis ("Horizontal_Right") < -0.2f) {
 			wantedYRotation -= rotateAmountByKeys;
 		}
-		if(Input.GetKey(KeyCode.L)){
+		if(Input.GetAxis("Horizontal_Right") > 0.2f){
 			wantedYRotation += rotateAmountByKeys;
 		}
 
@@ -95,16 +97,16 @@ public class DroneMovementScript : MonoBehaviour {
 
 	private Vector3 velocityToSmoothDampToZero;
 	void ClampingSpeedValues(){
-		if (Mathf.Abs (Input.GetAxis ("Vertical")) > 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal")) > 0.2f) {
+		if (Mathf.Abs (Input.GetAxis ("Vertical_Left")) > 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Left")) > 0.2f) {
 			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10.0f, Time.deltaTime * 5f));
 		}
-		if (Mathf.Abs (Input.GetAxis ("Vertical")) > 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal")) < 0.2f) {
+		if (Mathf.Abs (Input.GetAxis ("Vertical_Left")) > 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Left")) < 0.2f) {
 			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10.0f, Time.deltaTime * 5f));
 		}
-		if (Mathf.Abs (Input.GetAxis ("Vertical")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal")) > 0.2f) {
+		if (Mathf.Abs (Input.GetAxis ("Vertical_Left")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Left")) > 0.2f) {
 			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10.0f, Time.deltaTime * 5f));
 		}
-		if (Mathf.Abs (Input.GetAxis ("Vertical")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal")) < 0.2f) {
+		if (Mathf.Abs (Input.GetAxis ("Vertical_Left")) < 0.2f && Mathf.Abs (Input.GetAxis ("Horizontal_Left")) < 0.2f) {
 			ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
 		}
 	}
@@ -113,9 +115,9 @@ public class DroneMovementScript : MonoBehaviour {
 	private float tiltAmountSideways;
 	private float tiltAmountVelocity;
 	void Swirl(){
-		if (Mathf.Abs (Input.GetAxis ("Horizontal")) > 0.2f) {
-			ourDrone.AddRelativeForce (Vector3.right * Input.GetAxis ("Horizontal") * sideMovementAmount);
-			tiltAmountSideways = Mathf.SmoothDamp (tiltAmountSideways, -20 * Input.GetAxis ("Horizontal"), ref tiltAmountVelocity, 0.1f);
+		if (Mathf.Abs (Input.GetAxis ("Horizontal_Left")) > 0.2f) {
+			ourDrone.AddRelativeForce (Vector3.right * Input.GetAxis ("Horizontal_Left") * sideMovementAmount);
+			tiltAmountSideways = Mathf.SmoothDamp (tiltAmountSideways, -20 * Input.GetAxis ("Horizontal_Left"), ref tiltAmountVelocity, 0.1f);
 		} 
 		else {
 			tiltAmountSideways = Mathf.SmoothDamp (tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
