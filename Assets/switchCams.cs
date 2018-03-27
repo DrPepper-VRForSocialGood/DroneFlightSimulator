@@ -5,35 +5,40 @@ using UnityEngine;
 public class switchCams : MonoBehaviour
 {
     public GameObject DroneCam, PilotCam;
+    public RenderTexture render;
     public bool camSwitch = false;
     public Canvas UI;
 
     void Start()
     {
         UI.enabled = false;
-
     }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             camSwitch = !camSwitch;
-            if (camSwitch == true)
+            if (camSwitch == false)    //drone view
             {
-                PilotCam.SetActive(false);
-                DroneCam.SetActive(true);
+                PilotCam.GetComponent<Camera>().enabled = false;
+                DroneCam.GetComponent<Camera>().enabled = true;
                 UI.enabled = true;
+                DroneCam.GetComponent<Camera>().targetTexture = null;
                 
             }
 
-            if (camSwitch == false)
+            if (camSwitch == true)  //pilot view
             {
-                DroneCam.SetActive(false);
-                PilotCam.SetActive(true);
+                DroneCam.GetComponent<Camera>().enabled = false;
+           
+                PilotCam.GetComponent<Camera>().enabled = true;
+   
                 UI.enabled = false;
-                
+                DroneCam.GetComponent<Camera>().targetTexture = render;
 
             }
+
+
         }
     }
 }
