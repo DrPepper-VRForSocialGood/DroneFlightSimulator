@@ -62,7 +62,7 @@ public class DroneMovementScript : MonoBehaviour {
 			upForce = -26;
 		} 
 		else if (Mathf.Abs (Input.GetAxis ("Vertical_Left")) < 0.2f && (Mathf.Abs(Input.GetAxis("Vertical_Right")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal_Right")) < 0.2f)){
-			upForce = 9.81f;
+			upForce = 12.55f;
 		}
 
 	}
