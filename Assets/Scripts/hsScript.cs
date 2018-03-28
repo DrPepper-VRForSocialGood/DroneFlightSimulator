@@ -14,7 +14,7 @@ public class hsScript : MonoBehaviour {
 
 	void Update () {
 
-		double absValue = Mathf.Abs ((float)drone.velocity.x);
+		double absValue = Mathf.Abs (Mathf.Sqrt(Mathf.Pow((float)drone.velocity.x,2)+ Mathf.Pow((float)drone.velocity.z,2)));
 		hsText.text = "HS: " + absValue.ToString("F1") + " mph";
 	}
 }

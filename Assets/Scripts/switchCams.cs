@@ -18,7 +18,7 @@ public class switchCams : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             camSwitch = !camSwitch;
-            if (camSwitch == false)    //drone view
+            if (camSwitch == true)    //drone view
             {
                 PilotCam.GetComponent<Camera>().enabled = false;
                 DroneCam.GetComponent<Camera>().enabled = true;
@@ -27,7 +27,7 @@ public class switchCams : MonoBehaviour
                 
             }
 
-            if (camSwitch == true)  //pilot view
+            if (camSwitch == false)  //pilot view
             {
                 DroneCam.GetComponent<Camera>().enabled = false;
                 PilotCam.GetComponent<Camera>().enabled = true;
