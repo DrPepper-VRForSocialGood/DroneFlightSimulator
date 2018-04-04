@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DroneCam: {fileID: 1851045823}
   PilotCam: {fileID: 116255085}
-  render: {fileID: 0}
+  render: {fileID: 8400000, guid: d571932bc8cdee44cae0275ade1e2064, type: 2}
   camSwitch: 0
   UI: {fileID: 1635322684}
 --- !u!4 &118012568 stripped
@@ -2354,6 +2354,11 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 436670, guid: 54eb5844754051b40a918a84c33b7c1a, type: 2}
   m_PrefabInternal: {fileID: 385903793}
+--- !u!1 &277387226 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1441622472875534, guid: 498e7041731294b8cbcbfebc8c76abd2,
+    type: 2}
+  m_PrefabInternal: {fileID: 707823146}
 --- !u!1001 &285462855
 Prefab:
   m_ObjectHideFlags: 0
@@ -2514,11 +2519,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11621e82645b0419a910ae8e954c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstObject: {fileID: 0}
-  secondObject: {fileID: 0}
-  thirdObject: {fileID: 0}
-  fourthObject: {fileID: 0}
-  fifthObject: {fileID: 0}
+  firstObject: {fileID: 980809107}
+  secondObject: {fileID: 277387226}
+  thirdObject: {fileID: 1612260046}
+  fourthObject: {fileID: 354242138}
+  fifthObject: {fileID: 1210863471}
   sixthObject: {fileID: 1440867036}
   seventhObject: {fileID: 289360220}
   eightObject: {fileID: 1560350545}
@@ -2892,6 +2897,11 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 58a53b1d06893c94f9a2356bfb5e00db, type: 3}
   m_PrefabInternal: {fileID: 1299665807}
+--- !u!1 &354242138 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1372672843083364, guid: 498e7041731294b8cbcbfebc8c76abd2,
+    type: 2}
+  m_PrefabInternal: {fileID: 707823146}
 --- !u!1001 &367684921
 Prefab:
   m_ObjectHideFlags: 0
@@ -8063,6 +8073,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58a53b1d06893c94f9a2356bfb5e00db, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &980809107 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184785282850202, guid: 498e7041731294b8cbcbfebc8c76abd2,
+    type: 2}
+  m_PrefabInternal: {fileID: 707823146}
 --- !u!4 &989179946 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 58a53b1d06893c94f9a2356bfb5e00db, type: 3}
@@ -9412,6 +9427,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58a53b1d06893c94f9a2356bfb5e00db, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1210863471 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384812789109708, guid: 498e7041731294b8cbcbfebc8c76abd2,
+    type: 2}
+  m_PrefabInternal: {fileID: 707823146}
 --- !u!1001 &1212127177
 Prefab:
   m_ObjectHideFlags: 0
@@ -12779,6 +12799,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58a53b1d06893c94f9a2356bfb5e00db, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1612260046 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1875776490335628, guid: 498e7041731294b8cbcbfebc8c76abd2,
+    type: 2}
+  m_PrefabInternal: {fileID: 707823146}
 --- !u!1001 &1616708143
 Prefab:
   m_ObjectHideFlags: 0
@@ -15290,7 +15315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DroneCam: {fileID: 1851045823}
   PilotCam: {fileID: 116255085}
-  render: {fileID: 0}
+  render: {fileID: 8400000, guid: d571932bc8cdee44cae0275ade1e2064, type: 2}
   camSwitch: 0
   UI: {fileID: 1635322684}
 --- !u!1001 &1868721847
