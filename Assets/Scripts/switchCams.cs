@@ -8,10 +8,12 @@ public class switchCams : MonoBehaviour
     public RenderTexture render;
     public bool camSwitch = false;
     public Canvas UI;
+    public Material lit;
 
     void Start()
     {
         UI.enabled = false;
+        RenderSettings.skybox = lit;
     }
     void Update()
     {
