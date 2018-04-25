@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Tracking : MonoBehaviour {
@@ -79,9 +80,15 @@ public class Tracking : MonoBehaviour {
 	private string dp;
 	private string objectcolor;
 
-	// Use this for initialization
-	void Start () {
+    //Variables for red screen flash
+    public int numFlashes = 4;
+    public float flashSpeed = 0.5f;
+    public Color flashColor = new Color(255, 0, 0, 90);
+    public Image redImage;
 
+    // Use this for initialization
+    void Start () {
+        redImage.color = Color.clear; 
 	}
 	
 	// Update is called once per frame
@@ -156,48 +163,54 @@ public class Tracking : MonoBehaviour {
 		if (surfaceDistance_1 <= Safe_Radius_1 || surfaceDistance_2 <= Safe_Radius_1 || surfaceDistance_3 <= Safe_Radius_1 || surfaceDistance_4 <= Safe_Radius_1 || surfaceDistance_5 <= Safe_Radius_1 || surfaceDistance_6 <= Safe_Radius_1 || surfaceDistance_7 <= Safe_Radius_1 || surfaceDistance_8 <= Safe_Radius_1 || surfaceDistance_9 <= Safe_Radius_1 || surfaceDistance_10 <= Safe_Radius_1 || surfaceDistance_11 <= Safe_Radius_1 || surfaceDistance_12 <= Safe_Radius_1 || surfaceDistance_13 <= Safe_Radius_1 || surfaceDistance_14 <= Safe_Radius_1 || surfaceDistance_15 <= Safe_Radius_1 || surfaceDistance_16 <= Safe_Radius_1 || surfaceDistance_17 <= Safe_Radius_1 || surfaceDistance_18 <= Safe_Radius_1) {
 			gameObject.GetComponent<Renderer>().material.color = Safe_Radius_1_Color;
 			objectcolor = "Red";
-		}
+            StartCoroutine(FlashRed());
+        }
 		else if (surfaceDistance_1 <= Safe_Radius_2 || surfaceDistance_2 <= Safe_Radius_2 || surfaceDistance_3 <= Safe_Radius_2 || surfaceDistance_4 <= Safe_Radius_2 || surfaceDistance_5 <= Safe_Radius_2 || surfaceDistance_6 <= Safe_Radius_2 || surfaceDistance_7 <= Safe_Radius_2 || surfaceDistance_8 <= Safe_Radius_2 || surfaceDistance_9 <= Safe_Radius_2 || surfaceDistance_10 <= Safe_Radius_2 || surfaceDistance_11 <= Safe_Radius_2 || surfaceDistance_12 <= Safe_Radius_2 || surfaceDistance_13 <= Safe_Radius_2 || surfaceDistance_14 <= Safe_Radius_2 || surfaceDistance_15 <= Safe_Radius_2 || surfaceDistance_16 <= Safe_Radius_2 || surfaceDistance_17 <= Safe_Radius_2 || surfaceDistance_18 <= Safe_Radius_2) {
 			gameObject.GetComponent<Renderer>().material.color = Safe_Radius_2_Color;
 			objectcolor = "Orange";
-		}
-		else if (surfaceDistance_1 <= Safe_Radius_3 || surfaceDistance_2 <= Safe_Radius_3 || surfaceDistance_3 <= Safe_Radius_3 || surfaceDistance_4 <= Safe_Radius_3 || surfaceDistance_5 <= Safe_Radius_3 || surfaceDistance_6 <= Safe_Radius_3 || surfaceDistance_7 <= Safe_Radius_3 || surfaceDistance_8 <= Safe_Radius_3 || surfaceDistance_9 <= Safe_Radius_3 || surfaceDistance_10 <= Safe_Radius_3 || surfaceDistance_11 <= Safe_Radius_3 || surfaceDistance_12 <= Safe_Radius_3 || surfaceDistance_13 <= Safe_Radius_3 || surfaceDistance_14 <= Safe_Radius_3 || surfaceDistance_15 <= Safe_Radius_3 || surfaceDistance_16 <= Safe_Radius_3 || surfaceDistance_17 <= Safe_Radius_3 || surfaceDistance_18 <= Safe_Radius_3){ 
+            redImage.color = Color.clear;
+        }
+        else if (surfaceDistance_1 <= Safe_Radius_3 || surfaceDistance_2 <= Safe_Radius_3 || surfaceDistance_3 <= Safe_Radius_3 || surfaceDistance_4 <= Safe_Radius_3 || surfaceDistance_5 <= Safe_Radius_3 || surfaceDistance_6 <= Safe_Radius_3 || surfaceDistance_7 <= Safe_Radius_3 || surfaceDistance_8 <= Safe_Radius_3 || surfaceDistance_9 <= Safe_Radius_3 || surfaceDistance_10 <= Safe_Radius_3 || surfaceDistance_11 <= Safe_Radius_3 || surfaceDistance_12 <= Safe_Radius_3 || surfaceDistance_13 <= Safe_Radius_3 || surfaceDistance_14 <= Safe_Radius_3 || surfaceDistance_15 <= Safe_Radius_3 || surfaceDistance_16 <= Safe_Radius_3 || surfaceDistance_17 <= Safe_Radius_3 || surfaceDistance_18 <= Safe_Radius_3){ 
 			gameObject.GetComponent<Renderer>().material.color = Safe_Radius_3_Color;
 			objectcolor = "Yellow";
-		}
-		else if (surfaceDistance_1 > Safe_Radius_4 || surfaceDistance_2 > Safe_Radius_4 || surfaceDistance_3 > Safe_Radius_4 || surfaceDistance_4 > Safe_Radius_4 || surfaceDistance_5 > Safe_Radius_4 || surfaceDistance_6 > Safe_Radius_4 || surfaceDistance_7 > Safe_Radius_4 || surfaceDistance_8 > Safe_Radius_4 || surfaceDistance_9 > Safe_Radius_4 || surfaceDistance_10 > Safe_Radius_4 || surfaceDistance_11 > Safe_Radius_4 || surfaceDistance_12 > Safe_Radius_4 || surfaceDistance_13 > Safe_Radius_4 || surfaceDistance_14 > Safe_Radius_4 || surfaceDistance_15 > Safe_Radius_4 || surfaceDistance_16 > Safe_Radius_4 || surfaceDistance_17 > Safe_Radius_4 || surfaceDistance_18 > Safe_Radius_4){ 
+            redImage.color = Color.clear;
+
+        }
+        else if (surfaceDistance_1 > Safe_Radius_4 || surfaceDistance_2 > Safe_Radius_4 || surfaceDistance_3 > Safe_Radius_4 || surfaceDistance_4 > Safe_Radius_4 || surfaceDistance_5 > Safe_Radius_4 || surfaceDistance_6 > Safe_Radius_4 || surfaceDistance_7 > Safe_Radius_4 || surfaceDistance_8 > Safe_Radius_4 || surfaceDistance_9 > Safe_Radius_4 || surfaceDistance_10 > Safe_Radius_4 || surfaceDistance_11 > Safe_Radius_4 || surfaceDistance_12 > Safe_Radius_4 || surfaceDistance_13 > Safe_Radius_4 || surfaceDistance_14 > Safe_Radius_4 || surfaceDistance_15 > Safe_Radius_4 || surfaceDistance_16 > Safe_Radius_4 || surfaceDistance_17 > Safe_Radius_4 || surfaceDistance_18 > Safe_Radius_4){ 
 			gameObject.GetComponent<Renderer>().material.color = Safe_Radius_4_Color;
 			objectcolor = "Green";
-		}
+            redImage.color = Color.clear;
 
-		//		 Debugging statements to visualize the distances between objects, color at a given time, and distance 
-				//Debug.Log ("My current color is:" + objectcolor);
-//				Debug.Log(surfaceDistance1+" :surface1");
-//				Debug.Log(surfaceDistance2+" :surface2");
-//				Debug.Log(surfaceDistance2+" :surface3");
-//				Debug.DrawLine(transform.position, firstObject.transform.position, Color.yellow);
-//				Debug.DrawLine(transform.position, secondObject.transform.position, Color.yellow);
-//				Debug.DrawLine(transform.position, thirdObject.transform.position, Color.yellow);
-//				Debug.DrawLine(closestSurface1_1, closestSurface_1, Color.magenta);
-//				Debug.DrawLine(closestSurface1_2, closestSurface_2, Color.magenta);
-//				Debug.DrawLine(closestSurface1_3, closestSurface_3, Color.magenta);
-//				Debug.DrawLine(closestSurface1_4, closestSurface_4, Color.magenta);
-//				Debug.DrawLine(closestSurface1_5, closestSurface_5, Color.magenta);
-//				Debug.DrawLine(closestSurface1_6, closestSurface_6, Color.magenta);
-//				Debug.DrawLine(closestSurface1_7, closestSurface_7, Color.magenta);
-//				Debug.DrawLine(closestSurface1_8, closestSurface_8, Color.magenta);
-//				Debug.DrawLine(closestSurface1_9, closestSurface_9, Color.magenta);
-//				Debug.DrawLine(closestSurface1_10, closestSurface_10, Color.magenta);
-//				Debug.DrawLine(closestSurface1_11, closestSurface_11, Color.magenta);
-//				Debug.DrawLine(closestSurface1_12, closestSurface_12, Color.magenta);
-//				Debug.DrawLine(closestSurface1_13, closestSurface_13, Color.magenta);
-//				Debug.DrawLine(closestSurface1_14, closestSurface_14, Color.magenta);
-//				Debug.DrawLine(closestSurface1_15, closestSurface_15, Color.magenta);
-//				Debug.DrawLine(closestSurface1_16, closestSurface_16, Color.magenta);
-//				Debug.DrawLine(closestSurface1_17, closestSurface_17, Color.magenta);
-//				Debug.DrawLine(closestSurface1_18, closestSurface_18, Color.magenta);
-//
-	}
+        }
+
+        //		 Debugging statements to visualize the distances between objects, color at a given time, and distance 
+        //Debug.Log ("My current color is:" + objectcolor);
+        //				Debug.Log(surfaceDistance1+" :surface1");
+        //				Debug.Log(surfaceDistance2+" :surface2");
+        //				Debug.Log(surfaceDistance2+" :surface3");
+        //				Debug.DrawLine(transform.position, firstObject.transform.position, Color.yellow);
+        //				Debug.DrawLine(transform.position, secondObject.transform.position, Color.yellow);
+        //				Debug.DrawLine(transform.position, thirdObject.transform.position, Color.yellow);
+        //				Debug.DrawLine(closestSurface1_1, closestSurface_1, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_2, closestSurface_2, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_3, closestSurface_3, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_4, closestSurface_4, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_5, closestSurface_5, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_6, closestSurface_6, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_7, closestSurface_7, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_8, closestSurface_8, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_9, closestSurface_9, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_10, closestSurface_10, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_11, closestSurface_11, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_12, closestSurface_12, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_13, closestSurface_13, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_14, closestSurface_14, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_15, closestSurface_15, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_16, closestSurface_16, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_17, closestSurface_17, Color.magenta);
+        //				Debug.DrawLine(closestSurface1_18, closestSurface_18, Color.magenta);
+        //
+    }
 
 	// Function to write the text into a *.txt file
 	void WriteFile(){
@@ -214,4 +227,21 @@ public class Tracking : MonoBehaviour {
 		//System.IO.File.AppendAllText("C:/Users/DarkB/Downloads/MyTest.txt", appendText);
 
 	}
+    IEnumerator FlashRed()
+    {
+        Color defaultColor = Color.Lerp(redImage.color, Color.clear, flashSpeed * Time.deltaTime);
+       
+            // if the current color is the default color - change it to the flash color
+            if (redImage.color == defaultColor)
+            {
+                redImage.color = flashColor;
+            }
+            else // otherwise change it back to the default color
+            {
+                redImage.color = defaultColor;
+            }
+            yield return new WaitForSeconds(flashSpeed);
+        
+       // yield return new WaitForSeconds(1F);
+    }
 }

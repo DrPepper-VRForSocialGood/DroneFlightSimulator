@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 using System.Collections;
 
 public class DroneMovementScript : MonoBehaviour {
 
 	Rigidbody ourDrone;
     Transform drone;
+    public Image crash;
 
 	void Awake(){
 		ourDrone = GetComponent<Rigidbody> ();
         drone = GetComponent<Transform>();
         drone.position = Vector3.zero;
+        crash.enabled = false;
 
     }
 
@@ -24,8 +29,22 @@ public class DroneMovementScript : MonoBehaviour {
 			new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways)
 		);
 	}
+    void OnCollisionEnter(Collision collision)
+    {
+        
+       if (Time.time > 7)
+        {
+            Debug.Log("crashed");
+            crash.enabled = true;
+            if (Input.GetButtonDown("Fire3"))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
 
-	public float upForce;
+        }
+    
+    }
+    public float upForce;
 	public float Speed;
 	void MovementUpDown(){
 		

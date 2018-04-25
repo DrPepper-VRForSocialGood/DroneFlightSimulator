@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Fire1"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Def Scene");
         }
         if (Input.GetButtonDown("Fire3"))
         {
