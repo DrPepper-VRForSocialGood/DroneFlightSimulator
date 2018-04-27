@@ -8,14 +8,20 @@ public class DroneMovementScript : MonoBehaviour {
 
 	Rigidbody ourDrone;
     Transform drone;
-    public Image crash;
+	public GameObject crashScreen; //for Drone Cam
+	public GameObject crashScreen2; //for Pilot Cam
+	public GameObject redScreen;
+	public GameObject UI;
+	public Text windLabel;
+	bool isCrashed = false;
+
 
 	void Awake(){
 		ourDrone = GetComponent<Rigidbody> ();
         drone = GetComponent<Transform>();
-        drone.position = Vector3.zero;
-        crash.enabled = false;
-
+		drone.position = new Vector3 (0, 1, 0);
+		StartCoroutine (Wind ());
+		isCrashed = false;
     }
 
     void FixedUpdate(){
@@ -25,25 +31,59 @@ public class DroneMovementScript : MonoBehaviour {
 		ClampingSpeedValues();
 		Swirl ();
 		ourDrone.AddRelativeForce (Vector3.up * upForce);
-		ourDrone.rotation = Quaternion.Euler(
-			new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways)
-		);
+		ourDrone.rotation = Quaternion.Euler(new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways));
+		if (isCrashed == true) {
+			crashScreen.SetActive (true); 
+			crashScreen2.SetActive (true);
+			UI.SetActive (false);
+			redScreen.SetActive (false); 
+
+
+			if (Input.anyKeyDown) {
+				isCrashed = false;
+				SceneManager.LoadScene ("MainMenu");
+				Debug.Log ("load menu");
+			} 
+		}
+
+		else {
+			Time.timeScale = 1f;
+
+				redScreen.SetActive (true); 
+				crashScreen.SetActive (false); 
+				crashScreen2.SetActive (false);
+				UI.SetActive (true);
+			}
+
 	}
+
+	IEnumerator Wind(){
+		while (true){
+			ourDrone.drag = MainMenu.windValue*3 + Random.Range (1.0f, 3.0f);
+			windLabel.text = "Wind: " + ourDrone.drag + " mph";
+
+			yield return new 
+				WaitForSeconds (5);
+			ourDrone.drag = MainMenu.windValue*3 + Random.Range (1.0f, 3.0f);
+			windLabel.text = "Wind: " + ourDrone.drag + " mph";
+
+		}
+	}
+
     void OnCollisionEnter(Collision collision)
     {
         
-       if (Time.time > 7)
+       if (Time.time > 5)
         {
-            Debug.Log("crashed");
-            crash.enabled = true;
-            if (Input.GetButtonDown("Fire3"))
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
+			isCrashed = true;
+			Time.timeScale = 0.5f;
+
+			drone.position = new Vector3 (0, 1, 0);
+
 
         }
-    
     }
+
     public float upForce;
 	public float Speed;
 	void MovementUpDown(){
