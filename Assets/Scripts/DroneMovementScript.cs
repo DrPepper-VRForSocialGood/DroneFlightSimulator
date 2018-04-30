@@ -36,11 +36,12 @@ public class DroneMovementScript : MonoBehaviour {
 		while (true){
 			ourDrone.drag = MainMenu.windValue*3 + Random.Range (1.0f, 3.0f);
 			windLabel.text = "Wind: " + ourDrone.drag + " mph";
-
-			yield return new 
+            sideMovementAmount += MainMenu.windValue * 3 + Random.Range(1.0f, 3.0f);
+            yield return new 
 				WaitForSeconds (5);
 			ourDrone.drag = MainMenu.windValue*3 + Random.Range (1.0f, 3.0f);
-			windLabel.text = "Wind: " + ourDrone.drag + " mph";
+            sideMovementAmount += MainMenu.windValue * 3 + Random.Range(1.0f, 3.0f);
+            windLabel.text = "Wind: " + ourDrone.drag + " mph";
 
 		}
 	}
