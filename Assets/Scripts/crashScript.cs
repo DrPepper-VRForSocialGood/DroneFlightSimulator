@@ -25,6 +25,7 @@ public class crashScript : MonoBehaviour {
         daScript = GetComponent<DroneMovementScript>();
         daScript.enabled = true;
         ourDrone.useGravity = true;
+        redScreen.SetActive(true);
 
     }
 
