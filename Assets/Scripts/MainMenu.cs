@@ -28,7 +28,11 @@ public class MainMenu : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1")) {
 			SceneManager.LoadScene ("Def Scene");
 		}
-		if (Input.GetButtonDown ("Fire3")) {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Application.Quit();
+        }
+            if (Input.GetButtonDown ("Fire3")) {
 			Debug.Log ("Options");
 			wind.SetActive (true);
 			slider.SetActive (true);
