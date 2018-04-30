@@ -8,12 +8,9 @@ public class DroneMovementScript : MonoBehaviour {
 
 	Rigidbody ourDrone;
     Transform drone;
-	public GameObject crashScreen; //for Drone Cam
-	public GameObject crashScreen2; //for Pilot Cam
-	public GameObject redScreen;
-	public GameObject UI;
+
+
 	public Text windLabel;
-	bool isCrashed = false;
 
 
 	void Awake(){
@@ -21,41 +18,19 @@ public class DroneMovementScript : MonoBehaviour {
         drone = GetComponent<Transform>();
 		drone.position = new Vector3 (0, 1, 0);
 		StartCoroutine (Wind ());
-		isCrashed = false;
+		
     }
 
-    void FixedUpdate(){
-		MovementUpDown();
-		MovementForward();
-		Rotation();
-		ClampingSpeedValues();
-		Swirl ();
-		ourDrone.AddRelativeForce (Vector3.up * upForce);
-		ourDrone.rotation = Quaternion.Euler(new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways));
-		if (isCrashed == true) {
-			crashScreen.SetActive (true); 
-			crashScreen2.SetActive (true);
-			UI.SetActive (false);
-			redScreen.SetActive (false); 
-
-
-			if (Input.anyKeyDown) {
-				isCrashed = false;
-				SceneManager.LoadScene ("MainMenu");
-				Debug.Log ("load menu");
-			} 
-		}
-
-		else {
-			Time.timeScale = 1f;
-
-				redScreen.SetActive (true); 
-				crashScreen.SetActive (false); 
-				crashScreen2.SetActive (false);
-				UI.SetActive (true);
-			}
-
-	}
+    void FixedUpdate()
+    {
+        MovementUpDown();
+        MovementForward();
+        Rotation();
+        ClampingSpeedValues();
+        Swirl();
+        ourDrone.AddRelativeForce(Vector3.up * upForce);
+        ourDrone.rotation = Quaternion.Euler(new Vector3(titlAmountForward, currentYRotation, tiltAmountSideways));
+    }
 
 	IEnumerator Wind(){
 		while (true){
@@ -70,19 +45,7 @@ public class DroneMovementScript : MonoBehaviour {
 		}
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-        
-       if (Time.time > 5)
-        {
-			isCrashed = true;
-			Time.timeScale = 0.5f;
 
-			drone.position = new Vector3 (0, 1, 0);
-
-
-        }
-    }
 
     public float upForce;
 	public float Speed;
